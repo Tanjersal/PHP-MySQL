@@ -1,0 +1,45 @@
+<!-- static form / action = name of the php file that will process the form / post = send as separate message -->
+
+<htm>
+    <head>
+        <title>Bobs Auto - ordering form</title>
+    </head>
+    <body>
+        <form action="processorder.php" method="post">
+           
+            <table border="0">
+               
+                <tr bgcolor="#cccccc">
+                    <td width="150">Item</td>
+                    <td width="15">Quantity</td>  
+                </tr>
+                
+                <tr>
+                    <td>Tires</td>
+                    <td align="center"> <input type="text" name="tireqty" size="3" maxlength="3"></td>
+                </tr>
+                
+                <tr>
+                    <td>Oil</td>
+                    <td align="center"> <input type="text" name="oilqty" size="3" maxlength="3"> </td>
+                </tr>
+                
+                <tr>
+                    <td>Sparks plug</td>
+                    <td align="center"><input type="text" name="sparksqty" size="3" maxlength="3"></td>
+                </tr>
+                
+                <tr>
+                    <td>Shipping Address</td>
+                    <td align="center"><input type="text" name="address" size="40" maxlength="40"></td>
+                </tr>
+
+                <tr>
+                    <td colspan="2" align="center"> <input type="submit" value="Submit Order"></td>
+                </tr>
+
+            </table>
+            
+        </form>
+    </body>
+</htm>
