@@ -73,7 +73,7 @@
         
            // $outputString = $date."\t".$tireqty." tires \t".$oilqty." oil\t".$sparksqty." spark plugs\t\ $".$totalamount."\t".$address."\n";
             
-              $outputString = $date."\t".$tireqty." tires \t".$oilqty." oil\t" .$sparksqty." spark plugs\t\$".$totalamount."\t". $address."\n";
+              $outputString = $date."\t".$tireqty." tires \t".$oilqty." oil \t" .$sparksqty." spark plugs \t \$".$totalamount."\t". $address."\n";
         
             //open file for appending the order @ is for suppressing the warning
         

@@ -57,9 +57,9 @@
                 echo "<tr>
                         <td>".$line[0]."</td>
                         <td align=\"right\">".$line[1]."</td>
-                        <td align=\"right\">".$line[1]."</td>
-                        <td align=\"right\">".$line[1]."</td>
-                        <td align=\"right\">".$line[1]."</td>
+                        <td align=\"right\">".$line[2]."</td>
+                        <td align=\"right\">".$line[3]."</td>
+                        <td align=\"right\">".$line[4]."</td>
                         <td>".$line[5]."</td>
                     </tr>";
                     
