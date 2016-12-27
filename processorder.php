@@ -8,6 +8,8 @@
     $address = $_POST['address'];
     $date = date('H:i jS F Y'); // date variable 
 
+    $find = $_POST['find'];
+
     $DOCUMENT_ROOT = $_SERVER['DOCUMENT_ROOT']; // to get to the root of the directory
 
 ?>
@@ -97,7 +99,25 @@
             fclose($fp);
         
             echo "<p>Order was written successfully.<p>";
+                
+            switch($find){
 
+                case "a":
+                    echo "<p>Regular Customer</p>";
+                    break;
+
+                case "b":
+                    echo "<p>TV Advertisement</p>";
+                    break;
+                case "c":
+
+                    echo "<p>Phone directory</p>";
+                    break;
+                default:
+
+                    echo "<p>NOT KNown</p>";
+                    break;
+            }
         ?>
     </body>
 </html>

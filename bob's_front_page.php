@@ -23,12 +23,17 @@
                    
                    <?php
                    
-                        for($i=0; $i< 3;$i++)
-                        {
-                            echo "<td align=\"center\"><img src=\"";
-                            echo $pictures[$i];
-                            echo "\"/></td>";
-                        }
+                       for($i=0; $i< count($pictures); $i++){
+
+                           echo "<td style=\"width: 33%; text-align: center\">
+                           
+                           <img src=\"";
+
+                           echo $pictures[$i];
+                                
+                           echo "\"/></td>";
+
+                       }
                    
                    ?>
                    

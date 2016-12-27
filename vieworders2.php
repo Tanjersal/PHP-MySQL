@@ -1,72 +1,97 @@
 <?php
 
-    $DOCUMENT_ROOT = $_SERVER['DOCUMENT_ROOT'];
-?>
-   
+    //short variable namespace
 
-<htm>
-    <head>
-        
-        <title>Bob's Auto Parts - Customer Orders </title>
-        
-    </head>
-    <body>
-        
-        <h1>Bob's Auto parts</h1>
-        <h2>Customer orders</h2>
-        
+    $document_root = $_SERVER['DOCUMENT_ROOT'];
+?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bob's customer orders</title>
+
+    <style>
+        table, th, td{
+
+            border-collapse: collapse;
+            border: 1px solid black;
+            padding: 6px;
+        }        
+
+        th {
+
+            background:#ccccff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bob's Auto Parts</h1>
+
+    <h2>Customer Orders</h2>
+
         <?php
-            
-            //read in the entire file into an array
-            
-            $orders = file("$DOCUMENT_ROOT/orders/orders.txt");
-        
+
+            //read the entire file
+
+            $orders = @file("$document_root/orders/orders.txt");
+
             //count the number of orders
-        
-            $number_of_orders = count($orders);
-        
-            if($number_of_orders==0){
-                
-                echo '<p><strong>No orders pending, please try again later<strong><p>';
+
+            $number_orders = count($orders);
+
+            //check orders
+
+            if($number_orders == 0){
+
+                echo "<p>No order is available to be processed.</p>";
+
             }
-        
-            echo "<table border=\"1\">\n";
-        
-            echo "<tr><th bgcolor=\"CCCCFF\">Order Date</th>
-                      <th bgcolor=\"CCCCFF\">Tires</th>
-                      <th bgcolor=\"CCCCFF\">Oil</th>
-                      <th bgcolor=\"CCCCFF\">Spark Plugs</th>
-                      <th bgcolor=\"CCCCFF\">Total</th>
-                      <th bgcolor=\"CCCCFF\">Address</th>
-                 </tr>";
-        
-            for($i=0; $i<$number_of_orders; $i++){
-                
-                //split up each line
-                    
-                $line = explode("\t", $orders[$i]);
-                
-                //keep only the number of items ordered
-                
-                $line[1] = intval($line[1]);
-                $line[2] = intval($line[2]);
-                $line[3] = intval($line[3]);
-                
+
+            //contruct the table
+
+            echo "<table>\n";
+
+            echo '<tr>
+                    <th>Order Date</th>
+                    <th>Tires</th>
+                    <th>Oil</th>
+                    <th>Sparks plugs</th>
+                    <th>Total</th>
+                    <th>Address</th>
+                </tr>';
+
+            //loop throught the orders
+
+            for($count = 0; $count < $number_orders; $count++){
+
+                //split the lines
+
+                $lines = explode("\t", $orders[$count]);
+
+                //keep only the numbers ordered
+
+                $lines[1] = intval($lines[1]);
+                $lines[2] = intval($lines[2]);
+                $lines[3] = intval($lines[3]);
+
                 //output each order
-                
+
                 echo "<tr>
-                        <td>".$line[0]."</td>
-                        <td align=\"right\">".$line[1]."</td>
-                        <td align=\"right\">".$line[2]."</td>
-                        <td align=\"right\">".$line[3]."</td>
-                        <td align=\"right\">".$line[4]."</td>
-                        <td>".$line[5]."</td>
-                    </tr>";
-                    
-                    
+                        <td>".$lines[0]."</td>
+                        <td>".$lines[1]."</td>
+                        <td>".$lines[2]."</td>
+                        <td>".$lines[3]."</td>
+                        <td>".$lines[4]."</td>
+                        <td>".$lines[5]."</td>
+
+                </tr>";
             }
+
+
+            echo '<table';
         
-         echo "</table>";
         ?>
-    </body>
-</htm>
+</body>
+</html>
