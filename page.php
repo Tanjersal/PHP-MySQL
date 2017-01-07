@@ -103,7 +103,8 @@
             echo "</nav>\n";
         }
 
-        //function - isURLCurrentPage
+        //function - isURLCurrentPage checks if we are on the current page. 
+        //strpos($_SERVER['PHP_SELF'], $url) returns a number if the string $url is inside the superglobal variable $_SERVER['PHP_SELF']
 
         public function isURLCurrentPage($url)
         {
@@ -118,6 +119,7 @@
         }
 
         //function DisplayButtons
+        //display the menu button active or not depending on the current page status
 
         public function DisplayButtons($name, $url, $active=true)
         {
@@ -126,7 +128,6 @@
                 ?>
 
                     <div class="menuitem">
-
                         <a href="<?=$url?>">
                             <img src="s-logo.gif" heigth="20" weigth="20">
                             <span class="menutext"><?=$name?></span>
