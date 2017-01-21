@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload a file</title>
+</head>
+<body>
+    <h1>Please upload a form using the controls below</h1>
+
+    <form action="file_upload.php" method="POST" enctype="multipart/form-data">
+        <!--hidden field used to submit info that users can't see-->
+        <input type="hidden" name="MAX_FILE_SIZE" value="1000000">
+        <label for="the_file">Upload a file</label>
+        <input type="file" name="the_file" id="the_file">
+        <input type="submit" value="submit">
+    </form>
+</body>
+</html>
