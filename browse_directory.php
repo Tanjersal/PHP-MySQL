@@ -30,7 +30,9 @@
 
             if($file!= '.' && $file != '..'){
 
-                echo "<li>".$file."</li>";
+                //using a link instead 
+                echo '<li><a href="filedetails.php?file='.$file.'">'.$file.'</a></li>';
+                //echo "<li>".$file."</li>";
             }
             
         }
