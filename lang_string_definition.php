@@ -8,17 +8,17 @@
 
             case "en":
                 define(TXT, "Welcome to our site!");
-                define(LANG_CHOICE, "Choose language");
+                define(LANG_CHOICE, "Choose a language");
                 break;
             
             case "fr":
                 define(TXT, "Bienvenue á notre site internet!");
-                define(LANG_CHOICE, "Langue choisie");
+                define(LANG_CHOICE, "Choisissez une langue");
                 break;
 
             default:
                 define(TXT, "Welcome to our site!");
-                define(LANG_CHOICE, "Choose language");
+                define(LANG_CHOICE, "Choose a language");
                 break;
         }
     }
