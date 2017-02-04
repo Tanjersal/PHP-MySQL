@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form page</title>
+    <script src="//code.jquery.com/jquery-2.2.3.min.js"></script>
+</head>
+<body>
+    <form id="myForm">
+        <label for="firstname">First Name</label>
+        <input type="text" name="name[first]" id="first_name" class="name"><br>
+        <label for="lastname">Last Name</label>
+        <input type="text" name="name[last]" id="last_name" class="name"><br><br>
+        <button type="submit">Submit</button>
+    </form>
+    <hr>
+
+    <div id="console">
+        <h3>Console</h3>
+    </div>
+    
+    <script type="text/javascript">
+
+        var webConsole = function(msg){
+
+            var console = $('#console');
+
+            var messages = $('<p>').text(msg);
+
+            console.append(messages);
+        } 
+
+        $(document).ready(function(){
+
+            $('#first_name').attr('placeholder', 'Enter First Name');
+            $('#last_name').attr('placeholder', 'Enter Last Name');
+        });
+
+        $('#myForm').on('submit', function(event){
+
+            event.preventDefault();
+
+            var first = $('#first_name').val();
+            var last = $('#last_name').val();
+
+            webConsole('Done!');
+            alert('Hello ' + first + " " + last + "!");
+        });
+
+        $('.name').on('focusout', function(event){
+
+            var field = $(event.target);
+
+            webConsole('Name field ' + field.attr('id') + ' was updated to ' + field.val());
+        });
+    </script>
+</body>
+</html> 
